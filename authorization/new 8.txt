@@ -1,0 +1,4 @@
+Идентификатор клиента
+899281021795-epv7ob6icqtvfi9uj7m94h3aomvnv8s8.apps.googleusercontent.com
+Секретный код клиента
+rvlw5h-cqESjRrrp2bE6yhnn

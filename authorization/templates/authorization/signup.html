@@ -1,0 +1,110 @@
+<!Doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Sign Up</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">	
+</head>
+<body>
+	<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+	
+	<div class="container">
+		<div class="row text-center"><div class="col">SIGN UP WITH</div></div>
+		<div class="row text-center"><div class="col"><a href="{% url "social:begin" "google-oauth2" %}" id="facebook"><img src="/static/facebook.svg">FACEBOOK</a> / <a href="{% url "social:begin" "google-oauth2" %}" id="google"><img src="/static/google.svg">GOOGLE</a></div></div>
+		<div class="row text-center"><div id="hr-first" class="col"><hr></div><div class="col-auto">or</div><div id="hr-first" class="col"><hr></div></div>
+		<form method="POST">
+			{% csrf_token %}
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+				  <div class="input-group-text"><img src="/static/person-24px.svg"></div>
+				</div>
+				<input class="form-control" name="username" placeholder="Login" required>
+			</div>
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+				  <div class="input-group-text"><img src="/static/person-24px.svg"></div>
+				</div>
+				<input class="form-control" name="first_name" placeholder="First Name" required>
+			</div>
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+				  <div class="input-group-text"><img src="/static/person-24px.svg"></div>
+				</div>
+				<input class="form-control" name="last_name" placeholder="Last Name" required>
+			</div>
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+				  <div class="input-group-text"><img src="/static/mail_outline-24px.svg"></div>
+				</div>
+				<input class="form-control" type="email" name="email" placeholder="Email" required>
+			</div>
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+				  <div class="input-group-text"><img src="/static/lock-24px.svg"></div>
+				</div>
+				<input class="form-control" type="password" name="password" placeholder="Password" required>
+			</div>
+			<div class="input-group mb-2">
+				<div class="input-group-prepend">
+				  <div class="input-group-text"><img src="/static/lock-24px.svg"></div>
+				</div>
+				<input class="form-control" type="password" name="password2" placeholder="Confirm Password" required>
+			</div>	
+			<div class="custom-control custom-checkbox">
+				<input type="checkbox" class="custom-control-input" id="customCheck1" name="subscribe">
+				<label class="custom-control-label" for="customCheck1">I'd like to receive PlacePass news and offers</label>
+			</div>
+			<small class="form-text text-muted">By signing up, I agree to the PlacePass <a href="#">Terms of Service</a> and <a href="#">Private Policy</a></small>
+			<input class="row btn btn-success btn-block" type="submit" value="REGISTER">
+		</form>
+		<div class="row"><div class="col-7">Already have an account?</div><div class="col-5"><a href="/auth" class="btn btn-outline-primary btn-block" role="button">LOG IN</a></div></div>
+	</div>
+	<style>
+body {
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-image: url(/static/background.jpg);
+	background-size: cover;
+}
+input {
+	margin-bottom: 5px;
+}
+.container {
+	background-color: white;
+	max-width: 400px;
+	margin-top: 40px;
+	border-radius: 5px;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+.container .row {
+	margin-left: 0px!important;
+}
+img {
+	max-width: 1em;
+	margin-right: 0.5em;
+}
+
+#hr-first {
+	padding: 0;
+}
+#hr-second {
+	padding-left: 0;
+}
+
+#facebook {
+	color: #3b5999;
+}
+#google {
+	color: #3b7ded;
+}
+.input-group-text img {
+	padding: 0;
+	margin: 0;
+}
+	</style>
+</body>
+</html>
